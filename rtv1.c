@@ -5,7 +5,7 @@
 ** Login   <woivre_t@epitech.net>
 **
 ** Started on  Sun Dec 22 13:37:13 2013 Thibault Woivre
-** Last update Mon May 26 17:48:41 2014 dylan manin
+** Last update Tue May 27 18:01:13 2014 arthur vincent
 */
 
 #include	"mlxwin.h"
@@ -21,6 +21,8 @@ int		main(int ac, char **av)
   (mlxwin.win = mlx_new_window(mlxwin.mlx, 1000, 1000, "RTV1")) == NULL ?\
     exit (1) : 0;
   (mlxwin.img = mlx_new_image(mlxwin.mlx, 1000, 1000)) == NULL ? exit (1) : 0;
+  (mlxwin.img_wait = mlx_new_image(mlxwin.mlx, 1000, 1000)) == NULL ?
+    exit (1) : 0;
   get_eye(&mlxwin, av[1]);
   mlxwin.tab_obj = get_obj(av[2]);
   mlxwin.tab_lum = get_lum(av[3]);
@@ -39,23 +41,17 @@ int		remplis_image(t_win *mlxwin)
 
   y = 0;
   i = 0;
+  aff_wait_bar(x, y, 999, mlxwin);
   while (y < 1000)
     {
       x = 0;
       while (x < 1000)
 	{
 	  my_pixel_put_to_image(x, y, calc(x, y, mlxwin), mlxwin);
+	  aff_wait_bar(x, y, 999, mlxwin);
 	  x++;
 	}
       y++;
-      i++;
-      if (i % 100 == 0)
-        {
-	  i != 100 ? my_putchar(' ') : 0;
-	  my_put_nbr(i / 10);
-	  my_putstr("%");
-        }
-
     }
   return (0);
 }

@@ -5,11 +5,21 @@
 ** Login   <woivre_t@epitech.net>
 **
 ** Started on  Fri Oct 25 11:49:50 2013 Thibault Woivre
-** Last update Fri May 23 10:51:38 2014 bayle_q
+** Last update Tue May 27 17:58:14 2014 arthur vincent
 */
 
 #ifndef		MLXWIN_H_
 # define	MLXWIN_H_
+
+# define BLUEF	0x384592
+# define BLUEC	0x2196E0
+# define VIOLET	0xb73de3
+# define GREEN	0x63ca59
+# define YELLOW	0xe9d23c
+# define ORANGE	0xf39438
+# define RED	0xda3230
+# define WHITE	0xFFFFFF
+# define BLACK	0x000000
 
 typedef struct	s_calc
 {
@@ -54,12 +64,15 @@ typedef struct	s_win
   void		*mlx;
   void		*win;
   void		*img;
+  void		*img_wait;
   t_obj		*tab_obj;
   t_lum		*tab_lum;
   t_pos		p_oeil;
   t_pos		r_oeil;
 }		t_win;
 
+void		aff_poney(int x, int y, t_win *mlxwin);
+void		aff_wait_bar(int, int, int, t_win *mlxwin);
 void		calcul_cylindre(double *var, t_pos *xyz, t_win *mw, int i);
 void		inter_disque_cone(t_pos xyz, t_win mw, t_calc *disc, int i);
 void		inter_disque_cyl(t_pos xyz, t_win mw, t_calc *disc, int i);

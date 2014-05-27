@@ -5,7 +5,7 @@
 ## Login   <woivre_t@epitech.net>
 ##
 ## Started on  Thu Oct 24 16:59:55 2013 Thibault Woivre
-## Last update Fri May 23 15:21:10 2014 dylan manin
+## Last update Tue May 27 18:00:18 2014 arthur vincent
 ##
 
 NAME    	= rtv1
@@ -23,6 +23,7 @@ SRC     	= rtv1.c \
 		  fct_inter_cone.c \
 		  luminosite.c \
 		  norme.c \
+		  wait_bar.c \
 		  my_pixel_put_to_image.c \
 		  source/get_next_line.c \
 		  source/my_str_isnum.c \
@@ -35,7 +36,14 @@ SRC     	= rtv1.c \
 		  source/my_putstr.c \
 		  source/my_putchar.c \
 		  source/my_put_nbr.c \
-		  source/xmalloc.c
+		  source/xmalloc.c \
+		  poney/poney.c \
+		  poney/poney2.c \
+		  poney/poney3.c \
+		  poney/poney4.c \
+		  poney/poney5.c \
+		  poney/poney6.c \
+		  poney/poney_archi.c
 
 OBJ		= $(SRC:.c=.o)
 
